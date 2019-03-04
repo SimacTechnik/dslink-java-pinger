@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+group = 'Simac'
+version = '1.0.0'
+
+mainClassName = 'cz.simac.pinger.Main'
+
+sourceCompatibility = 8
+targetCompatibility = 8
+
+
+
+repositories {
+    maven { url "https://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'org.iot-dsa', name: 'dslink', version:'0.20.1'
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version:'1.1.1'
+    compile group: 'commons-cli', name: 'commons-cli', version:'1.4'
+}
+
+run {
+    args System.getProperty("exec.args", "").split()
+    workingDir project.buildDir
+}
+
+applicationDistribution.from new File(project.projectDir, "/dslink.json")
+

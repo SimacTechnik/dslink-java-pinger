@@ -1,0 +1,46 @@
+{
+  "name": "dslink-java-pinger",
+  "version": "0.1.0",
+  "description": "An implementation dslink of a simple pinging service",
+  "license": "MIT",
+  "author": {
+    "name": "Lukáš Hruška",
+    "email": "lukyhruska96@gmail.com"
+  },
+  "main": "bin/dslink-java-pinger",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SimacTechnik/dslink-java-pinger"
+  },
+  "bugs": {
+    "url": "https://github.com/SimacTechnik/dslink-java-pinger/issues"
+  },
+  "configs": {
+    "name": {
+      "type": "string",
+      "default": "pinger"
+    },
+    "broker": {
+      "type": "url"
+    },
+    "token": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "path",
+      "default": "nodes.json"
+    },
+    "key": {
+      "type": "path",
+      "default": ".key"
+    },
+    "log": {
+      "type": "enum",
+      "default": "info"
+    },
+    "handler_class": {
+      "type": "string",
+      "default": "cz.simac.pinger.PingerDSLink"
+    }
+  }
+}
